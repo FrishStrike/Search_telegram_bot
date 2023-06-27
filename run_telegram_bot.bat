@@ -1,10 +1,10 @@
 @echo off
 
-cd\Users\User\Desktop\Google pars
+cd\Users\Frish\Desktop\Search_telegram_bot
 
 call venv\Scripts\activate
 
-set TOKEN=5397319933:AAH3PAzsi_DfuSLWp9ypmttN0cVKnsZhkqw
+set TOKEN=...
 
 python telegram_bot.py
 

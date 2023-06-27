@@ -67,15 +67,12 @@ async def inline_bot(inline_handler: types.InlineQuery):
     text = inline_handler.query or None
     if text != None:
         result_id: str = hashlib.md5(text.encode()).hexdigest()
-        print('вход')
-    else:
-        print('Значение ввода None')
     get_data(text)
     input_content = InputTextMessageContent(data)
-    item = InlineQueryResultArticle(input_message_content=input_content, id=result_id, title='Search', description='default..')
+    item = InlineQueryResultArticle(input_message_content=input_content, id=result_id, title='Search', description=data)
 
     await bot.answer_inline_query(results=[item], inline_query_id=inline_handler.id, cache_time=1)
-
+    await bot.answer(reply_markup=ikb)
 
 
 @dp.message_handler()
